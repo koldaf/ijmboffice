@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	/*background: #000;*/
+	font-size: 1.5em;
+}
+hr{
+	border-color:#0D7031
+}
+a:link , a:visited , a:hover , a:active{
+	color:#0D7031;
+}
+a.btn{
+	color:#FFF;
+}
+header{
+	display: block;
+}
+footer{
+	background: #0A5927;
+	width: 100%;
+	overflow-x: hidden;
+	padding: 5px 10px 0px;
+	color:aliceblue;
+}
+footer .developer-note{
+	background: #052b13;
+	margin-bottom: -7px;
+	padding-top: 20px;
+}
+.breadcrumb a:link, .breadcrumb a:visited{
+	color:#0D7031;
+}
+.breadcrumb a:hover{
+	color:#5CC383
+}
+.container{
+	width: 85%;
+	margin: 0 auto;
+	padding: 5px 10px;
+	display: block
+}
+.top_notch{
+	border-bottom: 2px #0D7031 solid;
+	overflow: hidden;
+}
+.top_notch div{
+	margin-bottom: -5px;
+}
+.top_notch div span{
+	font-weight: bold;
+}
+.ltr{
+	float: left;
+}
+.rtl{
+	float: right;
+}
+/*BootStrap customization starts here...*/
+.btn-green, .btn-green:hover, .list-group-item.active, .list-group-item.active:hover, a.list-group-item.active:visited{
+	color: #FFF;
+	background: #0D7031;
+}
+
+/*Ends*/
+.social-media a , .social-media a:visited{
+	color:#FFF;
+	border: none
+}
+.social-media a:hover{
+	color:#700D1B /*#700D4C*/
+}
+.navbar-nav{
+	background:  #CF050 /*#E4D6D68*/;
+}
+.navbar-nav ul li{
+	border-right: #4B564C 2px solid;
+	padding:5px 10px;
+	border-radius: 2px;
+}
+.navbar-nav ul li a {
+	color:#0D7031
+}
+.quick-links > a:link, .quick-links > a:visited{
+	color:#FFF;
+	margin-left: -15px;
+	display: block;
+	border-top: 2px #D8EDDB solid;
+	padding:8px 2px 0px 0px;
+	font-size: 1.2em;
+	text-align: center;
+}
+.quick-links > a:hover{
+	text-decoration: none;
+	background: #D8EDDB;
+	color:#0D7031;
+	border-bottom: 2px #0D7031 solid;
+}
+.loads{
+	display: none
+}
