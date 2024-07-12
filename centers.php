@@ -6,7 +6,7 @@
     			<li><a href="index.php">Home</a></li>
     			<li><a href="#">About</a></li>
     			<li class="active">Our Centers</li>
-			</ol><h1 class="page-header">IJMBOFFICE
+			</ol><h1 class="page-header">schoolsearch
                     <small>Our Centers</small>
                 </h1>
 		</div>

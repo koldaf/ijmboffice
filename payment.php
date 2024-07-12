@@ -6,7 +6,7 @@
     			<li><a href="index.php">Home</a></li>
     			<li><a href="#">Apply</a></li>
     			<li class="active">Download IJMB  Form</li>
-			</ol><h1 class="page-header">IJMBOFFICE
+			</ol><h1 class="page-header">schoolsearch
                     <small>Download Forms</small>
                 </h1>
 		</div>
@@ -26,9 +26,9 @@
 				<div class="well">
 					<h3>Follow these stages for your form processing</h3>
 						<ol>
-							<li><a href="https://ijmboffice.org.ng/download.php">Download the form here</a> </li>
+							<li><a href="https://schoolsearch.org.ng/download.php">Download the form here</a> </li>
 							<li>Complete the form appropriately </li>
-							<li>Send a Scan copy of the form and payment teller <a href="mailto:admissions@ijmboffice.org.ng"> admissions@ijmboffice.org.ng</a> </li>
+							<li>Send a Scan copy of the form and payment teller <a href="mailto:admissions@schoolsearch.org.ng"> admissions@schoolsearch.org.ng</a> </li>
 							<li>An acknowledgement email would be sent to you.</li>
 						</ol>
 						<br/>
@@ -40,7 +40,7 @@
 					<strong>Acct Name:</strong> ACHIVERS THRONE <br/> 
 					<marquee behavior="scroll" scrollamount="2" style="color: red">Beware of Frauds, channel all payment into the account number detailed above... for further information call: <a href="tel:+2348089186066"> 08089186066</a> </marquee>
 					
-				</div><h4>Send a scanned copy of your completed form and evidence of payment to <a href="mailto:admissions@ijmboffice.org.ng">admissions@ijmboffice.org.ng</a></h4>
+				</div><h4>Send a scanned copy of your completed form and evidence of payment to <a href="mailto:admissions@schoolsearch.org.ng">admissions@schoolsearch.org.ng</a></h4>
 			</div>
 		</div>
 		<hr>

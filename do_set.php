@@ -51,7 +51,7 @@ include('lib/functions.php');
 					if($validated){
 						//send sms alert
 						$det = $check->fetch_array();
-						$text = 'Dear '.$det['surname'].', ur application processing fee was succefully validated. Kindly scan your form to admissions@ijmboffice.org.ng call:07030400348';
+						$text = 'Dear '.$det['surname'].', ur application processing fee was succefully validated. Kindly scan your form to admissions@schoolsearch.org.ng call:07030400348';
 						smsalert($text, $det['phone']);
 						echo 'SMS was sent';
 					}else{
@@ -91,7 +91,7 @@ include('lib/functions.php');
 					<p>This is to remind you of your form processing fee. Kindly make a payment of <strong>8,000</strong> at any branch of Sterlin Bank. <br/>
 					<strong>Acct. No:</strong> 0067930185. <br/>
 					<strong>Acct Name:</strong> IJMB REGISTRATION SCHOOL LINKS. </p>';
-					$subject = 'IJMBOFFICE REMINDER';
+					$subject = 'schoolsearch REMINDER';
 					mailers($det['email'], $det['surname'], $subject, $html, $text);
 					//smsalert($text, $det['phone']);
 					echo 'SMS was sent';

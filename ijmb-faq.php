@@ -6,7 +6,7 @@
     			<li><a href="index.php">Home</a></li>
     			<li><a href="#">About</a></li>
     			<li class="active">About IJMB</li>
-			</ol><h1 class="page-header">IJMBOFFICE
+			</ol><h1 class="page-header">schoolsearch
                     <small>IJMB F.A.Q</small>
                 </h1>
 		</div>

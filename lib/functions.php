@@ -11,11 +11,7 @@ function redirect($location)
 function prepsql($value)
 {
 	$value = htmlentities($value);
-	if(!get_magic_quotes_gpc())
-	{
-		$value = addslashes($value);
-		return $value;
-	}
+	$value = addslashes($value);
 	return $value;
 }
 function check_password($pwd) 
@@ -229,17 +225,17 @@ function mailers($to, $name, $subject, $html, $text){
 	$mail->SMTPSecure = 'ssl';
 	$mail->SMTPDebug = 2;
 	//Set the hostname of the mail server
-	$mail->Host = 'mail.ijmboffice.org.ng';
+	$mail->Host = 'mail.schoolsearch.org.ng';
 	//Set the SMTP port number - likely to be 25, 465 or 587
 	$mail->Port = 465;
 	//Whether to use SMTP authentication
 	$mail->SMTPAuth = true;
 	//Username to use for SMTP authentication
-	$mail->Username = 'info@ijmboffice.org.ng';
+	$mail->Username = 'info@schoolsearch.org.ng';
 	//Password to use for SMTP authentication
 	$mail->Password = '12345%$#@!';
 	//Set who the message is to be sent from
-	$mail->setFrom('info@ijmboffice.org.ng', 'IJMBOFFICE');
+	$mail->setFrom('info@schoolsearch.org.ng', 'schoolsearch');
 	//Set an alternative reply-to address
 	//$mail->addReplyTo('replyto@example.com', 'First Last');
 	//Set who the message is to be sent to
@@ -635,7 +631,7 @@ function validate_payment($tid){
 function smsalert($msg,$phoneno){
 	$msg= rawurlencode($msg);
 	$phoneno="+234".substr($phoneno,-10);
-	$sender=rawurlencode('IJMBOFFICE');
+	$sender=rawurlencode('schoolsearch');
 	$send=file_get_contents('https://smartsmssolutions.com/api/?message='.$msg.'&to='.$phoneno.'&sender='.$sender.'&type=0&routing=3&token=tzR1QEQrdS6Z38Sq1zAGwL2qFhf8ewMieHjOAW08JeD32e3Ein6MQRppm44ESBRFeq8O78hiJiwcKdqIcEQqFwh0Cp61OkwtFTDA');
  }
 ?>

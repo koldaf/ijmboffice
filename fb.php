@@ -9,6 +9,6 @@ $fb = new Facebook\Facebook([
 ]);
 $helper = $fb->getRedirectLoginHelper();
 $permissions = ['user_managed_groups', 'publish_actions']; // optionnal
-$loginUrl = $helper->getLoginUrl('http://ijmboffice.org.ng/fb-callback.php', $permissions);
+$loginUrl = $helper->getLoginUrl('http://schoolsearch.org.ng/fb-callback.php', $permissions);
 echo "<script>window.top.location.href='".$loginUrl."'</script>";
 ?>

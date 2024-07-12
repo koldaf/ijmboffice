@@ -15,23 +15,25 @@
 			$browseNews = $con->query("SELECT * FROM news_tbl WHERE is_deleted='false' AND link_sash = '".$_GET['n']."' ORDER BY ref_id DESC");
 			$news = $browseNews->fetch_array();
 			echo '
-			<meta property="og:url" content="http://ijmboffice.org.ng'.$_SERVER['REQUEST_URI'].'" />
+			<meta property="og:url" content="http://schoolsearch.org.ng'.$_SERVER['REQUEST_URI'].'" />
 			<meta property="og:type" ` content="article" />
 			<meta property="og:title"    content="'.$news['title'].'" />
 			<meta property="og:description"   content="Get the Latest IJMB Gist..." />
-			<meta property="og:image"   content="http://ijmboffice.org.ng/ijmb_banner.jpg" />
+			<meta property="og:image"   content="http://schoolsearch.org.ng/ijmb_banner.jpg" />
 			<meta property="fb:app_id" content="1249921001782999"/>';
 		}
 ?>
-   <title>IJMB Office</title>
+   <title>SchoolSearch</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<!--link rel="stylesheet" href="bootstrap-5.3.3/css/bootstrap.min.css"-->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/responsiveslides.css">
     <link rel="stylesheet" href="css/custom.css" type="text/css">
     <link rel="icon" href="img/IJMBlogo.png" media="all">
     <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!--script src="bootstrap-5.3.3/js/bootstrap.min.js"></script-->
     <script src="js/responsiveslides.min.js"></script>
     <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 	<script src="js/custom_app.js"></script>
@@ -76,7 +78,8 @@
 		</div>
 		<nav style="display: block">
 			<div class="ltr">
-				<img src="img/ijmb office logo.jpg">
+				<h2 class="brand-name">SchoolSearch</h2>
+				<!--img src="img/ijmb office logo.jpg"-->
 			</div>
 			<div class="navbar-nav rtl">
 				<ul class="nav nav-pills">

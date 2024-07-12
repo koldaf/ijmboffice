@@ -84,14 +84,14 @@ include('lib/functions.php');
 						<hr/>
 						<h3>Follow these stages for your form processing</h3>
 						<ol>
-							<li><a href="https://ijmboffice.org.ng/download.php">Download the form here</a> </li>
+							<li><a href="https://schoolsearch.org.ng/download.php">Download the form here</a> </li>
 							<li>Complete the form appropriately </li>
-							<li>Send a Scan copy to <a href="mailto:admissions@ijmboffice.org.ng"> admissions@ijmboffice.org.ng</a> </li>
+							<li>Send a Scan copy to <a href="mailto:admissions@schoolsearch.org.ng"> admissions@schoolsearch.org.ng</a> </li>
 							<li>An acknowledgement email would be sent to you.</li>
 						</ol>
 						
 						Thank You <br>
-						<strong>IJMBOFFICE.ORG.NG</strong>
+						<strong>schoolsearch.ORG.NG</strong>
 						</p>';
 					  mailers($email, $sname.' '.$oname, 'IJMB OFFICE- FORM', $html, $text);
 					  $rets['succ'] = true;

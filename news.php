@@ -8,7 +8,7 @@
     			<li><a href="index.php">Home</a></li>
     			<li><a href="#">News</a></li>
     			<li class="active">IJMB News</li>
-			</ol><h1 class="page-header">IJMBOFFICE
+			</ol><h1 class="page-header">schoolsearch
                     <small>IJMB News</small>
                 </h1>
 		</div>
@@ -41,7 +41,7 @@
            		<?php
 				  }
            ?>
-           <div class="fb-share-button" data-href="https://ijmboffice.org.ng<?php echo '/news.php?fbid='.$news['ref_id']?>" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fijmboffice.org.ng<?php echo rawurlencode('/news.php?fbid='.$news['ref_id'])?>&amp;src=sdkpreparse">Share</a></div>
+           <div class="fb-share-button" data-href="https://schoolsearch.org.ng<?php echo '/news.php?fbid='.$news['ref_id']?>" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fschoolsearch.org.ng<?php echo rawurlencode('/news.php?fbid='.$news['ref_id'])?>&amp;src=sdkpreparse">Share</a></div>
            <!--<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>-->
            </div>
             <div class="col-sm-3">

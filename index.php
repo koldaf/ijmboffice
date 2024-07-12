@@ -4,9 +4,9 @@
 ?>
 		<div class="row" style="display: block">
 			<ul class="rslides">
-			  <li><img src="img/img1.jpg" alt=""></li>
-			  <li><img src="img/img2.jpg" alt=""></li>
-			  <li><img src="img/img3.jpg" alt=""></li>
+			  <li><img src="img/schoolsearch/1.png" alt=""></li>
+			  <li><img src="img/schoolsearch/2.png" alt=""></li>
+			  <li><img src="img/schoolsearch/3.png" alt=""></li>
 			</ul>
 		</div>
 		<hr/>
@@ -43,9 +43,9 @@
 		<hr>
 		<div class="row">
 			<div class="jumbotron" style="overflow: hidden">
-				<div class="col-sm-4"><img src="img/ij.png" class="img-responsive"/></div>
-				<div class="col-sm-8">
-					<h1>You can be among over 200,000 candidates, who secure admission into the University of their choice annually</h1>
+				<div class="col-sm-8"><img src="img/black-female-student-affirmative-action.jpg" class="img-responsive"/></div>
+				<div class="col-sm-4">
+					<h1 style="font-size: 3em;"> You can be among over 200,000 candidates, who secure admission into the University of their choice annually</h1>
 					<p>&nbsp;</p>
 					<p><a class="btn btn-green btn-lg" data-toggle="modal" href="#applynow" role="button">Apply Now</a>
 					</p>

@@ -20,7 +20,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     			<li><a href="logout.php">Log Out</a></li>
     			<li class="active"><?php echo $_SESSION['user']?></li>
 			</ol>
-            <h1 class="page-header">IJMBOFFICE
+            <h1 class="page-header">schoolsearch
                     <small>Home</small>
             </h1>
 		</div>
@@ -39,7 +39,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 								  </div>';
 						}
 						
-						echo ' <h1 class="page-header">IJMBOFFICE
+						echo ' <h1 class="page-header">schoolsearch
 									<small>Upload IJMB Updates</small>
 								</h1>
 						

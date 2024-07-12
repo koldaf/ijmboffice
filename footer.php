@@ -82,7 +82,7 @@
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 style="color: green"><span class="glyphicon glyphicon-send"></span> Apply Now</h4>
+          <h4 style="color:#0f6e73"><span class="glyphicon glyphicon-send"></span> Apply Now</h4>
 
         </div>
 
@@ -149,7 +149,7 @@
 
             </div>-->
 
-            <button type="submit" name="login" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-on"></span> Apply for IJMB</button>
+            <button type="submit" name="login" class="btn btn-default btn-green btn-block"><span class="glyphicon glyphicon-on"></span> Apply for IJMB</button>
 
           </form>
 
@@ -179,7 +179,7 @@
 
 					<br/><strong>Support Lines:</strong> 08089186066<br/>
 
-					<strong>Support Emails:</strong> info@ijmboffice.org.ng</p>
+					<strong>Support Emails:</strong> info@schoolsearch.org.ng</p>
 
 				</div>
 
@@ -209,7 +209,7 @@
 
 					Phone: 08089186066 <br>
 
-					Email: info@ijmboffice.org.ng
+					Email: info@schoolsearch.org.ng
 
 				</div>
 
@@ -217,9 +217,9 @@
 
 			<div class="row developer-note">
 
-				<div class="col-sm-12 text-center">
+				<div class="col-sm-12 text-center" style="margin-bottom: 5px;">
 
-					powered by: ijmboffice.org.ng - 2017 - <?php echo date('Y');?>
+					powered by: schoolsearch.org.ng - 2017 - <?php echo date('Y');?>
 
 				</div>
 
