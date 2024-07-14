@@ -235,7 +235,7 @@ function mailers($to, $name, $subject, $html, $text){
 	//Password to use for SMTP authentication
 	$mail->Password = '12345%$#@!';
 	//Set who the message is to be sent from
-	$mail->setFrom('info@schoolsearch.org.ng', 'schoolsearch');
+	$mail->setFrom('info@schoolsearch.org.ng', 'SchoolSearch');
 	//Set an alternative reply-to address
 	//$mail->addReplyTo('replyto@example.com', 'First Last');
 	//Set who the message is to be sent to

@@ -45,7 +45,7 @@ include('lib/functions.php');
 		  $phone = prepsql($_POST['phone']);
 		  $email = prepsql($_POST['email']);
 		  $centre = prepsql($_POST['center']);
-		  $sess  = set_val('session');
+		  $sess = $session  = set_val('session');
 		  //$pass = md5(en_crypt($pass));
 		  if(null($sname) || null($oname) || null($phone)){
 			  $rets['mssg'] = '<div class="alert alert-danger">
