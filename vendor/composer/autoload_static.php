@@ -6,10 +6,6 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit8f1a3e321c40236566b3b05506d77ac7
 {
-    public static $files = array (
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
@@ -24,11 +20,16 @@ class ComposerStaticInit8f1a3e321c40236566b3b05506d77ac7
         ),
     );
 
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit8f1a3e321c40236566b3b05506d77ac7::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit8f1a3e321c40236566b3b05506d77ac7::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit8f1a3e321c40236566b3b05506d77ac7::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -2,6 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require('connect.php');
+require('autoload.php');
 global $con;
 function redirect($location)
 {
@@ -205,7 +206,7 @@ function mailers($to, $name, $subject, $html, $text){
 	 */
 	//Import the PHPMailer class into the global namespace
 	//use PHPMailer\PHPMailer\PHPMailer;
-	require ("vendor/autoload.php");
+	//require ("vendor/autoload.php");
 	//Create a new PHPMailer instance
 	$mail = new PHPMailer;
 	//Tell PHPMailer to use SMTP
