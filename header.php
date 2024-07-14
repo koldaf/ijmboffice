@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Get a straight admission into 200Level in any University of your choice. Call 07030400348"/>
+    <meta name="description" content="Get a straight admission into 200Level in any University of your choice. Call 08180557799"/>
 	<meta name="google"/>
 	<meta name="googlebot"/>
 	<meta name="keywords" content="IJMB, JAMB, 200level, University, admission, University admisssion, ijmbe, ijmb, direct entry into university, gain admission, ijmb direct admission, ijmb result, ijmb registration, jamb change of course, ijmb exam schedule, <?php echo date('Y')?> IJMB Registration, JUPEB, jupeb, Jupeb registration, jupeb online, jupeb result, remedials, university remedials"/>
@@ -69,7 +69,7 @@
    <div class="container">
     <header>
     	<div class="top_notch">
-    		<div class="ltr" style="margin-top: 15px"><span >24/7 Support Lines: </span> 08089186066</div>
+    		<div class="ltr" style="margin-top: 15px"><span >24/7 Support Lines: </span> 08180557799</div>
     		<div class="btn-group rtl social-media" role="group" aria-label="...">
     			<a href="#" class="btn btn-green"><i class="fa fa-2x fa-facebook"></i></a>
 				<a href="#" class="btn btn-green"><i class="fa fa-2x fa-twitter"></i></a>
