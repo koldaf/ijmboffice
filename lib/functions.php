@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require('connect.php');
-require('../vendor/autoload.php');
+require('autoload.php');
 global $con;
 function redirect($location)
 {
