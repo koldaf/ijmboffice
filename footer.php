@@ -177,7 +177,7 @@
 
 					<p>Our candidate support personnels are here to assist you on all your IJMB application requirements either by Phone or Email.
 
-					<br/><strong>Support Lines:</strong> 08089186066<br/>
+					<br/><strong>Support Lines:</strong> 08180557799<br/>
 
 					<strong>Support Emails:</strong> info@schoolsearch.org.ng</p>
 
@@ -199,7 +199,7 @@
 
 				</div>
 
-				<div class="col-sm-3  text-right">     
+				<!--div class="col-sm-3  text-right">     
 
 					<h4 class="heading">Contact Us</h4>
 
@@ -211,7 +211,7 @@
 
 					Email: info@schoolsearch.org.ng
 
-				</div>
+				</div-->
 
 			</div>
 
@@ -219,7 +219,7 @@
 
 				<div class="col-sm-12 text-center" style="margin-bottom: 5px;">
 
-					powered by: schoolsearch.org.ng - 2017 - <?php echo date('Y');?>
+					powered by: schoolsearch.org.ng -  <?php echo date('Y');?>
 
 				</div>
 
