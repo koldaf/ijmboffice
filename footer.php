@@ -255,7 +255,6 @@
 	  $('#apply').submit(function(){
 		  'use strict';
 		  var param = {url:$(this).attr('action'), data:$(this).serialize()};
-
 		  	$.post(param.url, param.data, function(x){
 
 				console.log(x);
