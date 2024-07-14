@@ -129,16 +129,9 @@
               <select name="center" class="form-control" id="center" required>
 
 			  	<option value="">Select preferred center</option>
-
-			  	<option value="Port Harcourt">Port Harcourt</option>
-
 			  	<option value="Ilorin">Ilorin</option>
-
-			  	<option value="Ibadan">Ibadan</option>
-			  	<option value="Enugu">Enugu</option>
+			  	<option value="Ibadan">Ibadan</option>	
 			  	<option value="Lagos">Lagos</option>
-			  	<option value="Abuja">Abuja</option>
-
 			  </select>
 
             </div>
@@ -149,7 +142,7 @@
 
             </div>-->
 
-            <button type="submit" name="login" class="btn btn-default btn-green btn-block"><span class="glyphicon glyphicon-on"></span> Apply for IJMB</button>
+            <button type="submit" name="login" class="btn btn-default btn-green btn-block"><span class="glyphicon glyphicon-on"></span> Apply</button>
 
           </form>
 
