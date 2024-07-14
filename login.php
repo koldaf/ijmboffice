@@ -73,7 +73,7 @@ include('lib/functions.php');
 			
 			  }else{
 				  $regno = autogen_onefield('application_dummy', 'session', $session,'IJMB/'.$session.'/');
-				  $insert = $con->query("INSERT INTO application_dummy (surname, othernames, phone, centre, email, datetime,session,regno) VALUES ('".$sname."','".$oname."', '".$phone."','".$centre."', '".$email."', NOW(), '".$sess."','".$regno."')");
+				  $insert = $con->query("INSERT IGNORE INTO application_dummy (surname, othernames, phone, centre, email, datetime,session,regno) VALUES ('".$sname."','".$oname."', '".$phone."','".$centre."', '".$email."', NOW(), '".$sess."','".$regno."')");
 				  if($insert){
 					  $text =  'Dear '.$sname.', ur application was successful,Kindly make a payment of 8,000 at any branch of SterlinBank Acct. No: 0067930185. AcctName: Achivers Thrones';
 					  $html = '<p>
