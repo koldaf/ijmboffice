@@ -4,9 +4,9 @@
 ?>
 		<div class="row" style="display: block">
 			<ul class="rslides">
-			  <li><img src="img/schoolsearch/1.png" alt=""></li>
-			  <li><img src="img/schoolsearch/2.png" alt=""></li>
-			  <li><img src="img/schoolsearch/3.png" alt=""></li>
+			  <li><img src="img/1.png" alt=""></li>
+			  <li><img src="img/2.png" alt=""></li>
+			  <li><img src="img/3.png" alt=""></li>
 			</ul>
 		</div>
 		<hr/>
