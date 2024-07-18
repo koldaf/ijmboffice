@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require('connect.php');
-$dir = ($_SERVER['HTTP_HOST'] == 'localhost')?'..':__DIR__;
+$dir = ($_SERVER['SERVER_NAME'] == 'localhost')?'..':__DIR__;
 //print_r($_SERVER);
 require  $dir.'/vendor/autoload.php'; //vendor\autoload.php
 global $con;

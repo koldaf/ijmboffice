@@ -12,7 +12,15 @@ $id=$contentvar=$_REQUEST['cmd'];
 
  if($id='form-payment'){
     $pay = make_payment_attempt($j->email, $j->phone, $j->surname, $j->othernames, $j->regno, $j->fee_code,'',$j->prog_id,$j->sess);
-    print_r($pay);
+    if(!$pay){
+        $resp['message'] = "There was an error initiating payment";
+    }else{
+        $resp['redirect'] = true;
+        $resp['location'] = $pay;
+    }
+    //print_r($pay);
 
  }
+
+ echo json_encode($resp);
 ?>
