@@ -667,13 +667,13 @@ function make_payment_attempt($email, $phone, $sname, $oname, $regno, $code, $lo
 	$j = base64_encode(json_encode(array('surname'=>$sname, 'phone' => $phone, 'email'=> $email, 'trans_id'=>$t_id, 'amount'=>$amts, 'regno'=>$regno, 'payment_desc'=>$desc, 'fee_code'=>$code, 'session'=>$sess)));
 	//check for previous payment attempt  	
 	$check = $con->query("SELECT * FROM payment_attempttb WHERE regno = '$regno' AND payment_desc = '$desc' AND session = '$sess'");
-	if(countrows($check)<1){
+	/*if(countrows($check)<1){
 		$pay = $con->query("INSERT INTO payment_attempttb (surname, other_name, regno, trans_id, amount, payment_desc, fee_code, trans_date, payment_date, payment_time, session, json_val) VALUES ('".$sname."', '".$oname."', '".$regno."', '".$t_id."', '".$amts."', '".$desc."','".$code."', CURDATE(), CURDATE(), CURTIME(), '".$sess."','".$j."')") or die($con->error);
 	}else{
 		$tranx_data = $check->fetch_all();
 		$j = base64_encode(json_encode(array('surname'=>$sname, 'phone' => $phone, 'email'=> $email, 'trans_id'=>$tranx_data['trans)id'], 'amount'=>$amts, 'regno'=>$regno, 'payment_desc'=>$desc, 'fee_code'=>$code, 'session'=>$sess)));
 	}
-
+		*/
 	if(!$con->error){
 		return "pay_start.php?s=$salt&j=$j";
 	}else{
