@@ -43,7 +43,7 @@ require('header.php');
 			<img src="img/succ.png" class="img-circle img-rounded">
 		<h1>Payment was Successful</h1>
 		<p>Your payment has been verified and found to be successful. Thank You</p>
-		<p><a class="btn btn-primary btn-lg" href="users/" role="button"><i class="fa fa-home fa-2x"></i>Home</a>
+		<p><a class="btn btn-primary btn-lg" href="index.php" role="button"><i class="fa fa-home fa-2x"></i>Home</a>
 		</p>
 	</div>
 
