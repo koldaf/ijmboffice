@@ -15,6 +15,7 @@ $id=$contentvar=$_REQUEST['cmd'];
     if(!$pay){
         $resp['message'] = "There was an error initiating payment";
     }else{
+        $resp['success'] = true;
         $resp['redirect'] = true;
         $resp['location'] = $pay;
     }
