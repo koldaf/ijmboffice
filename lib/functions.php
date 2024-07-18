@@ -2,7 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require('connect.php');
-require  __DIR__.'/vendor/autoload.php'; //vendor\autoload.php
+$dir = ($_SERVER['HTTP_HOST'] == 'localhost')?'..':__DIR__;
+//print_r($_SERVER);
+require  $dir.'/vendor/autoload.php'; //vendor\autoload.php
 global $con;
 function redirect($location)
 {
@@ -635,4 +637,165 @@ function smsalert($msg,$phoneno){
 	$sender=rawurlencode('schoolsearch');
 	$send=file_get_contents('https://smartsmssolutions.com/api/?message='.$msg.'&to='.$phoneno.'&sender='.$sender.'&type=0&routing=3&token=tzR1QEQrdS6Z38Sq1zAGwL2qFhf8ewMieHjOAW08JeD32e3Ein6MQRppm44ESBRFeq8O78hiJiwcKdqIcEQqFwh0Cp61OkwtFTDA');
  }
+
+ //PAYSTACK
+function is_prev_payment_success($sname, $phone, $email, $amt, $sess){
+	global $con;
+	$chek = $con->query("SELECT * FROM payment_attempttb WHERE surname='".$sname."' AND amount = '".$amt."' AND (trans_id LIKE '%".$phone."%' OR trans_id LIKE '%".$email."%') AND session = '".$sess."'");
+	$ret = $chek->fetch_array();
+	if($ret['status'] == 'success'){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+//Make Payment Attempt
+/*This instantiate a payment attempt on with customer email,pone, surname, othername, regno, paycode and session*/
+function make_payment_attempt($email, $phone, $sname, $oname, $regno, $code, $loc_id, $prog_id, $sess){
+	global $con;
+  	$t_id =  'ALL_'.str_replace('/','_',$regno).$phone.time();
+	$fees = dlookup('fee_amount', 'payment_setup', "fee_code='$code' AND prog_id = '$prog_id' ");
+	//$desc = ;
+	$desc = dlookup('fee_name', 'payment_fee_setup', "fee_code = '$code' "); //$fees[0]->fee_name;
+	$charges = 250;
+	$amt = $fees + $charges;
+	$amts = ($amt * 100);
+	//check for previous payment attempt  	
+  	/*$pay = $con->query("INSERT INTO payment_attempttb (surname, other_name, regno, trans_id, amount, payment_desc, trans_date, payment_date, payment_time, session) VALUES ('".$sname."', '".$oname."', '".$regno."', '".$t_id."', '".$amt."', '".$desc."', CURDATE(), CURDATE(), CURTIME(), '".$sess."')") or die($con->error);*/
+  	//prepare transaction initialization
+	$salt = hash('md5','bode thomas').md5(base64_encode($sname.$email.$regno.$code.$sess));
+	//$m = md5(base64_encode($j->surname.$j->email.$j->regno.$j->fee_code.$j->session));
+	$j = base64_encode(json_encode(array('surname'=>$sname, 'phone' => $phone, 'email'=> $email, 'trans_id'=>$t_id, 'amount'=>$amts, 'regno'=>$regno, 'payment_desc'=>$desc, 'fee_code'=>$code, 'session'=>$sess)));
+	//$j = json_encode(array('surname'=>$sname, 'phone' => $phone, 'email'=> $email, 'trans_id'=>$t_id, 'amount'=>$amts, 'regno'=>$regno, 'payment_desc'=>$desc, 'fee_code'=>$code, 'session'=>$sess,'fee'=>$fees));
+	//log payment attempt
+	$pay = $con->query("INSERT INTO payment_attempttb (surname, other_name, regno, trans_id, amount, payment_desc, fee_code, trans_date, payment_date, payment_time, session, json_val) VALUES ('".$sname."', '".$oname."', '".$regno."', '".$t_id."', '".$amts."', '".$desc."','".$code."', CURDATE(), CURDATE(), CURTIME(), '".$sess."','".$j."')") or die($con->error);
+	if(!$con->error){
+		return "pay_start.php?s=$salt&j=$j";
+	}else{
+		return false;
+	}
+}
+
+
+//DThings
+function dlookup_json($column,$table,$condition='')
+{
+	global $con;
+	$row = array();
+	if($condition=="")
+		{
+			$result=$con->query("select $column from $table") or die($con->error);
+			while($r=$result->fetch_array(MYSQLI_ASSOC))// or fetch_array(true)
+				{
+					$row[]=$r;
+				}
+		}
+	else
+	{
+		$result=$con->query("select $column from $table where $condition") or die($con->error);
+		while($r=$result->fetch_array(MYSQLI_ASSOC))// or fetch_array(true)
+				{
+					$row[]=$r;
+				}
+	}
+	return json_encode($row);
+}// end of dlookup_json
+function dlookup($column,$table,$condition='')
+{
+	global $con;
+	if($condition=="")
+		{
+			$result=$con->query("select $column as output from $table") or die($con->error);
+			$r=$result->fetch_array(MYSQLI_ASSOC);// or fetch_array(true)
+			$output=$r['output'];
+				
+		}
+	else
+	{
+		$result=$con->query("select $column as output from $table where $condition") or die($con->error);
+		$r=$result->fetch_array(MYSQLI_ASSOC);// or fetch_array(true)
+		$output=$r['output'];
+	}
+	return $output;
+}// end of dlookup
+
+function dcount($column,$table,$condition='')
+{
+	global $con;
+	if($condition=="")
+		{
+			$result=$con->query("select count($column) as total from $table");
+			$r=$result->fetch_array(MYSQLI_ASSOC);// or fetch_array(true)
+			$total=$r['total'];
+			
+		}
+	else
+	{
+		$result=$con->query("select count($column) as total from $table where $condition");
+		$r=$result->fetch_array(MYSQLI_ASSOC);// or fetch_array(true)
+		$total=$r['total'];
+	}
+	return $total;
+}// end of dcount
+
+function dsum($column,$table,$condition='')
+{
+	global $con;
+	if($condition=="")
+		{
+			$result=$con->query("select sum($column) as total from $table");
+			$r=$result->fetch_array(MYSQLI_ASSOC);// or fetch_array(true)
+			$total=$r['total'];
+			
+		}
+	else
+	{
+		$result=$con->query("select sum($column) as total from $table where $condition");
+		$r=$result->fetch_array(MYSQLI_ASSOC);// or fetch_array(true)
+		$total=$r['total'];
+	}
+	return $total;
+}// end of dsum
+
+function numberTowords($num){
+	$ones = array( 	0 =>"ZERO", 1 => "ONE",	2 => "TWO", 3 => "THREE", 4 => "FOUR", 5 => "FIVE", 6 => "SIX", 7 => "SEVEN", 8 => "EIGHT", 9 => "NINE", 10 => "TEN", 11 => "ELEVEN", 12 => "TWELVE", 13 => "THIRTEEN", 14 => "FOURTEEN", 15 => "FIFTEEN", 16 => "SIXTEEN", 17 => "SEVENTEEN", 18 => "EIGHTEEN", 19 => "NINETEEN", "014" => "FOURTEEN" );
+	$tens = array( 0 => "ZERO", 1 => "TEN", 2 => "TWENTY", 3 => "THIRTY", 4 => "FORTY", 5 => "FIFTY", 6 => "SIXTY", 7 => "SEVENTY", 8 => "EIGHTY", 9 => "NINETY" ); 
+	$hundreds = array( "HUNDRED", "THOUSAND", "MILLION", "BILLION", "TRILLION", "QUARDRILLION" ); /*limit t quadrillion */
+	$num = number_format($num,2,".",","); 
+	$num_arr = explode(".",$num); 
+	$wholenum = $num_arr[0]; 
+	$decnum = $num_arr[1]; 
+	$whole_arr = array_reverse(explode(",",$wholenum)); 
+	krsort($whole_arr,1); 
+	$rettxt = ""; 
+	foreach($whole_arr as $key => $i){
+		while(substr($i,0,1)=="0")
+				$i=substr($i,1,5);
+		if($i < 20){ 
+			/* echo "getting:".$i; */
+			$rettxt .= $ones[$i]; 
+		}elseif($i < 100){ 
+			if(substr($i,0,1)!="0")  $rettxt .= $tens[substr($i,0,1)]; 
+			if(substr($i,1,1)!="0") $rettxt .= " ".$ones[substr($i,1,1)]; 
+		}else{ 
+			if(substr($i,0,1)!="0") $rettxt .= $ones[substr($i,0,1)]." ".$hundreds[0]; 
+			if(substr($i,1,1)!="0")$rettxt .= " ".$tens[substr($i,1,1)]; 
+			if(substr($i,2,1)!="0")$rettxt .= " ".$ones[substr($i,2,1)]; 
+		} 
+		if($key > 0){ 
+			$rettxt .= " ".$hundreds[$key]." "; 
+		}
+	} 
+	if($decnum > 0){
+		$rettxt .= " and ";
+		if($decnum < 20){
+			$rettxt .= $ones[$decnum];
+		}elseif($decnum < 100){
+			$rettxt .= $tens[substr($decnum,0,1)];
+			$rettxt .= " ".$ones[substr($decnum,1,1)];
+		}
+	}
+	return $rettxt .' NAIRA ONLY';
+}
 ?>

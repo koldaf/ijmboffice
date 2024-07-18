@@ -45,6 +45,7 @@ include('lib/functions.php');
 		  $phone = prepsql($_POST['phone']);
 		  $email = prepsql($_POST['email']);
 		  $centre = prepsql($_POST['center']);
+		  $prog = prepsql($_POST['prog']);
 		  $sess = $session  = set_val('session');
 		  //$pass = md5(en_crypt($pass));
 		  if(null($sname) || null($oname) || null($phone)){
@@ -65,19 +66,23 @@ include('lib/functions.php');
 		  }else{
 			  //check application with phone number and surname
 			  $check = select_row_with_twofields('application_dummy','surname',$sname,'phone',$phone);
+			  $det = $check->fetch_array();
 			  //print_r($check); exit;
 			  if(countrows($check) > 0){
 				  $rets['succ'] = true;
 				  $rets['mssg'] = '001'; //already submitted... 
-				  $det = $check->fetch_array();
 				  $rets['d'] =time();
+				  //print_r($det); exit;
+				  $rets['regno'] = base64_encode($det['regno']);
+				  $rets['sval'] = md5($det['datetime']);
 			
 			  }else{
-				  $regno = autogen_onefield('application_dummy', 'session', $session,'IJMB/'.$session.'/');
-				  $insert = $con->query("INSERT IGNORE INTO application_dummy (surname, othernames, phone, centre, email, datetime,session,regno) VALUES ('".$sname."','".$oname."', '".$phone."','".$centre."', '".$email."', NOW(), '".$sess."','".$regno."')");
+				$program = dlookup('prog_name','programmetb',"prog_id='$prog'");
+				  $regno = autogen_onefield('application_dummy', 'session', $session,"ALevel/$session/");
+				  $insert = $con->query("INSERT IGNORE INTO application_dummy (surname, othernames, phone, centre,exam_type, email, datetime,session,regno) VALUES ('".$sname."','".$oname."', '".$phone."','".$centre."', '".$prog."','".$email."', NOW(), '".$sess."','".$regno."')");
 				  //print_r($insert); exit;
 				  if($insert){
-					  $text =  'Dear '.$sname.', ur application was successful,Kindly make a payment of 8,000 at any branch of SterlinBank Acct. No: 0067930185. AcctName: Achivers Thrones';
+					 /* $text =  'Dear '.$sname.', ur application was successful,Kindly make a payment of 8,000 at any branch of SterlinBank Acct. No: 0067930185. AcctName: Achivers Thrones';
 					  $html = '<p>
 					  	Dear '.$sname.', <br/>
 					  	Your application was successful, Kindly make a payment of 8,000 for your form registration processing at any branch of Sterlin Bank PLC. <br/>
@@ -96,9 +101,12 @@ include('lib/functions.php');
 						<strong>schoolsearch.ORG.NG</strong>
 						</p>';
 					  mailers($email, $sname.' '.$oname, 'IJMB OFFICE- FORM', $html, $text);
+					  */
 					  $rets['succ'] = true;
 					  $rets['mssg'] = '002';
-					  smsalert($text, $phone);
+					  $rets['regno'] = base64_encode($regno);
+					  $rets['sval'] = md5(date('Y-m-d H:i:s'));
+					  //smsalert($text, $phone);
 				  }else{
 					  $rets['mssg'] ='<div class="alert alert-danger">
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

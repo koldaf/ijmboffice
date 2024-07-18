@@ -121,3 +121,206 @@ function submitNews(){
 //NiceEdit
 //bkLib.onDomLoaded(nicEditors.allTextAreas);
 
+
+function showNotification(mssg, type, icon ="fa fa-alert", from="top", align="right", timer=4000){
+
+	$.notify({
+		icon: icon,
+		message: mssg
+  
+	},{
+		allow_dismiss: true,
+		showProgressbar: false,
+		type: type,
+		timer: timer,
+		placement: {
+			from: from,
+			align: align
+		}
+	});
+  }
+//{1,2,3,4}
+function ajaxcall(cmd,dat=''){
+
+	const link = 'script.php?cmd='+cmd;
+			var param = {url:link, dataLink:JSON.stringify(dat)};
+			$.post(param.url, {data:param.dataLink}, function(suc){
+			console.log(suc);
+			var resp = $.parseJSON(suc);
+			if(resp.success){
+				if(resp.redirect){
+                    //return false
+					window.location.href = resp.location;
+				}else if(resp.reload){
+					//md.showNotification('success', resp.mssg);
+					showNotification(resp.message, 'success')
+					setTimeout(function(){
+						window.location.reload();
+					}, 5000);
+					//alert(resp.mssg);	
+				}else if(resp.tab){
+                   // md.showNotification('success', resp.mssg);
+				   showNotification(resp.message, 'success')
+                    $('.nav-tabs a [href="#'+resp.next_tab+'"]').tab('show');
+                }else if(resp.div_status){
+                   // md.showNotification('success', resp.mssg);
+				   showNotification(resp.message, 'success')
+					$('#'+resp.div_id).html(resp.div_message);
+                }else if(resp.cmd){
+					if(resp.action == 'mailing'){
+						//$("#sub").modal('hide');
+						setCookie('sub', 'yes', 7)
+					}
+				}
+				else{
+					showNotification(resp.message, 'success')
+					//md.showNotification('success', resp.mssg);
+				}
+			}else{
+				showNotification(resp.message, 'danger')
+				//md.showNotification('danger', resp.mssg);
+			}
+			//console.log(resp);
+		});
+	return false;
+		
+}
+
+$('.ajaxform').submit(function(){
+	if($(this).attr('enctype') == 'multipart/form-data'){
+		$.ajax({
+		url:$(this).attr('action'),
+		method:"POST",
+		data:new FormData(this),
+		contentType:false,
+		processData:false,
+		success:function(data){
+			console.log(data);
+			var resp = $.parseJSON(data);
+			if(resp.success){
+				showNotification(resp.message, 'success')
+				if(resp.redirect){
+				window.location.href = resp.location;
+				}else if(resp.reload){
+					
+					setTimeout(function(){
+						window.location.reload();
+					}, 5000);
+				}
+				else if(resp.div_status){				   		
+				$('#'+resp.div_id).html(resp.div_message);
+				}
+				//else{
+//						showNotification(resp.message, 'success')
+//					}
+			}else{
+				showNotification(resp.message, 'danger')
+			}
+			
+			console.log(data);
+		}
+	});
+	}else if($(this).attr('data-nojson') === 'true'){
+		var param = {url:$(this).attr('action'), data:$(this).serializeArray()};
+		$.post(param.url, param.data, function(suc){
+			console.log(suc);
+			let resp = $.parseJSON(suc);
+			if(resp.success){
+				if(resp.redirect){
+					//return false
+					window.location.href = resp.location;
+				}else if(resp.reload){
+					//md.showNotification('success', resp.mssg);
+					showNotification(resp.message, 'success')
+					setTimeout(function(){
+						window.location.reload();
+					}, 5000);
+					//alert(resp.mssg);
+					
+				}else if(resp.tab){
+				   // md.showNotification('success', resp.mssg);
+				   showNotification(resp.message, 'success');
+					$('.nav-tabs a [href="#'+resp.next_tab+'"]').tab('show');
+				}else if(resp.div_status){
+				   // md.showNotification('success', resp.mssg);
+				   showNotification(resp.message, 'success')
+					$('#'+resp.div_id).html(resp.div_message);
+				}else if(resp.cmd){
+					if(resp.action == 'mailing'){
+						//$("#sub").modal('hide');
+						setCookie('sub', 'yes', 7)
+					}
+				}else if(resp.win_close){
+					//console.log('closing...');
+					setTimeout(function(){
+						window.close();
+						localStorage.setItem('reload','true');
+					}, 500);
+				}else if(resp.alert){
+					alert(resp.message);
+				}
+				else{
+					showNotification(resp.message, 'success')
+					//md.showNotification('success', resp.mssg);
+				}
+			}else{
+				showNotification(resp.message, 'danger')
+				//md.showNotification('danger', resp.mssg);
+			}
+		});
+		console.log('I no get json');
+	}else{
+		//var param = {url:$(this).attr('action'), data:$(this).serialize()};
+		var param = {url:$(this).attr('action'), data:$(this).serializeArray()};
+		var dataObj = {};
+		$(param.data).each(function(i, field){
+			dataObj[field.name] = field.value; 
+				});
+			var form_data=JSON.stringify(dataObj);
+		$.post(param.url, {data:form_data}, function(suc){
+		console.log(suc);
+		var resp = $.parseJSON(suc);
+		if(resp.success){
+			if(resp.redirect){
+				//return false
+				window.location.href = resp.location;
+			}else if(resp.reload){
+				//md.showNotification('success', resp.mssg);
+				showNotification(resp.message, 'success')
+				setTimeout(function(){
+					window.location.reload();
+				}, 1000);
+				//alert(resp.mssg);
+				
+			}else if(resp.tab){
+			   // md.showNotification('success', resp.mssg);
+			   showNotification(resp.message, 'success');
+				$('.nav-tabs a [href="#'+resp.next_tab+'"]').tab('show');
+			}else if(resp.div_status){
+			   // md.showNotification('success', resp.mssg);
+			   showNotification(resp.message, 'success')
+				$('#'+resp.div_id).html(resp.div_message);
+			}else if(resp.cmd){
+				if(resp.action == 'mailing'){
+					//$("#sub").modal('hide');
+					setCookie('sub', 'yes', 7)
+				}
+			}else if(resp.alert){
+				alert(resp.message);
+			}
+			else{
+				showNotification(resp.message, 'success')
+				//md.showNotification('success', resp.mssg);
+			}
+		}else{
+			showNotification(resp.message, 'danger')
+			//md.showNotification('danger', resp.mssg);
+		}
+		//console.log(resp);
+	})
+	}
+	//document.getElementsByClassName("ajaxform").reset();
+
+	return false; 
+});
+console.log('..bot waiting for action');

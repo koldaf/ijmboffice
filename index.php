@@ -56,10 +56,10 @@ require('header.php');
 </div>
 <hr>
 </div>
+<?php include('footer.php') ?>
 <script>
 	$(document).ready(function(e) {
 		$('#applynow').modal('show');
 		console.log(e);
 	});
 </script>
-<?php include('footer.php') ?>

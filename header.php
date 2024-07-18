@@ -31,13 +31,6 @@
     <link rel="stylesheet" href="css/responsiveslides.css">
     <link rel="stylesheet" href="css/custom.css" type="text/css">
     <link rel="icon" href="img/IJMBlogo.png" media="all">
-    <script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!--script src="bootstrap-5.3.3/js/bootstrap.min.js"></script-->
-    <script src="js/responsiveslides.min.js"></script>
-    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-	<script src="js/custom_app.js"></script>
-	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
   </head>
   <body>
   <script>
@@ -88,6 +81,10 @@
 				  <li role="presentation"><a href="news.php">News <i class="fa fa-newspaper-o"></i></a></li>
 				  <li role="presentation"><a href="centers.php">Our Centers</a></li>
 				  <li role="presentation"><a href="#contact">Contact Us</a></li>
+				  <li role="presentation">
+				  <?php if(isset($_SESSION['user'])){echo '<a  href="logout.php">Log Out</a>';}else{
+					echo '<a data-toggle="modal" href="#loginModal">Log In</a>';} ?>
+				  </li>
 				</ul>
 			</div
 		></nav>

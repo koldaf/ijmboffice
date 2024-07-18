@@ -123,17 +123,24 @@
             </div>
 
 			<div class="form-group">
-
               <label for="center"><span class="glyphicon glyphicon-globe"></span> Preferred Center</label>
-
               <select name="center" class="form-control" id="center" required>
-
 			  	<option value="">Select preferred center</option>
 			  	<option value="Ilorin">Ilorin</option>
 			  	<option value="Ibadan">Ibadan</option>	
 			  	<option value="Lagos">Lagos</option>
 			  </select>
-
+            </div>
+			<div class="form-group">
+              <label for="center"><span class="glyphicon glyphicon-road"></span> Preferred Programme</label>
+              <select name="prog" class="form-control" id="center" required>
+			  	<option value="">Select preferred center</option>
+			  	<?php $prog_all = json_decode(dlookup_json('prog_name, prog_id', 'programmetb', "prog_status = 'Active'"));
+				foreach($prog_all as $prog){
+					echo "<option value='$prog->prog_id'>$prog->prog_name</option>";
+				}
+				?>
+			  </select>
             </div>
 
             <!--<div class="checkbox">
@@ -220,7 +227,13 @@
 
 		</footer>
 
-
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+	<script src="js/bootstrap-notify.min.js"></script>
+	<script src="js/custom_app.js"></script>
+	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
   <script>
 
@@ -265,11 +278,11 @@
 
 					if(kk.mssg == '001'){
 
-						window.location.replace('payment.php?exist=1&d='+kk.d)
+						window.location.replace('payment.php?exist=1&sval='+kk.sval+'&reg='+kk.regno);
 
 					}else{
 
-						window.location.replace('payment.php?exist=0');
+						window.location.replace('payment.php?exist=0&sval='+kk.sval+'&reg='+kk.regno);
 					}
 				}else{
 
