@@ -76,9 +76,9 @@ if('success' == $tranx->data->status){
 						Thank You <br>
 						<strong>'.SITENAME.'</strong>
 						</p>';
-					  mailers($j->email, $j->surname, SITENAME, $html, $text);
+					 //mailers($j->email, $j->surname, SITENAME, $html, $text);
 					  
-					  smsalert($text, $j->phone);
+					  //smsalert($text, $j->phone);
 					redirect('succ_payment.php?var_d='.$d);
 				}else {
 					redirect('succ_payment.php?var_d='.$d);
