@@ -8,7 +8,7 @@ if ($_GET['exist'] == 0) {
 }
 $userdet = json_decode(dlookup_json('*', 'application_dummy ad, payment_setup ps, programmetb p', "ad.regno='$regno' AND ps.prog_id=ad.exam_type AND p.prog_id = ad.exam_type"));
 
-print_r($userdet[0]);
+//print_r($userdet[0]);
 ?>
 <div class="row" style="margin-top: 10px;">
 	<ol class="breadcrumb">
@@ -78,7 +78,7 @@ print_r($userdet[0]);
 				</div>
 			</div>			
 		</div>
-		
+</div>
 	</div>
 </div>
 <hr>
