@@ -43,9 +43,9 @@ if('success' == $tranx->data->status){
 	$j_val = dlookup('json_val', 'payment_attempttb', "ret_ref = '$ref'");
 	$j = json_decode(base64_decode($j_val));
 	
-	var_dump($j); 
+	var_dump($j_val); 
 	
-	print_r('<p></p>');
+	print_r('<p> </p>');
 
 	var_dump($tranx->data);
 	exit;
