@@ -10,6 +10,7 @@ define ('LOGS','lsa_main_user_tbl');
 define ('PAYTBL', 'payment_transaction');
 define ('NEWS', 'lsa_news_notification_tble');
 define ('ROOT',$_SERVER['HTTP_HOST']);
+define('SITENAME', 'SchoolSearch');
 
 define("TESTKEY", "sk_test_a0b12fef17fc46e2cbed1507223421b45c71245d");
 define("LIVEKEY", "");
