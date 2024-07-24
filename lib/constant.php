@@ -13,5 +13,5 @@ define ('ROOT',$_SERVER['HTTP_HOST']);
 define('SITENAME', 'SchoolSearch');
 
 define("TESTKEY", "sk_test_a0b12fef17fc46e2cbed1507223421b45c71245d");
-define("LIVEKEY", "");
+define("LIVEKEY", "pk_live_4862c873509d792323846998dd69f84ec881715a");
 ?>

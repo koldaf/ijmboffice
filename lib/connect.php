@@ -6,7 +6,7 @@ if($con->connect_error)
 	die("Connection failed: " . $con->connect_error);
 }else{
 	global $con;
-	$payLive =  false; //false
+	$payLive =  true; //false
 	$payKey = ($payLive === true)? LIVEKEY:TESTKEY;
 	global $payKey;
 }
