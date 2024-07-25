@@ -69,24 +69,36 @@
    				<a href="#" class="btn btn-green"><i class="fa fa-2x fa-google-plus"></i></a>
     		</div>
 		</div>
-		<nav style="display: block">
-			<div class="ltr">
-				<h2 class="brand-name">SchoolSearch</h2>
-				<!--img src="img/ijmb office logo.jpg"-->
-			</div>
-			<div class="navbar-nav rtl">
-				<ul class="nav nav-pills">
-				  <li role="presentation"><a href="index.php">Home</a></li>
-				  <li role="presentation"><a href="about.php">About</a></li>
-				  <li role="presentation"><a href="news.php">News <i class="fa fa-newspaper-o"></i></a></li>
-				  <li role="presentation"><a href="centers.php">Our Centers</a></li>
-				  <li role="presentation"><a href="#contact">Contact Us</a></li>
-				  <li role="presentation">
-				  <?php if(isset($_SESSION['user'])){echo '<a  href="logout.php">Log Out</a>';}else{
-					echo '<a data-toggle="modal" href="#loginModal">Log In</a>';} ?>
-				  </li>
-				</ul>
-			</div
-		></nav>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">SchoolSearch</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+		<li><a href="about.php">About</a></li>
+		<li><a href="news.php">News <i class="fa fa-newspaper-o"></i></a></li>
+		<li><a href="centers.php">Our Centers</a></li>
+		<li><a href="#contact">Contact Us</a></li>
+		<li>
+		<?php if(isset($_SESSION['user'])){echo '<a  href="logout.php">Log Out</a>';}else{
+		echo '<a data-toggle="modal" href="#loginModal">Log In</a>';} ?>
+		</li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+		
 	</header>
 	<div class="clearfix"></div>

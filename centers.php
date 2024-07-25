@@ -25,109 +25,59 @@
 							<thead>
 								<tr>
 									<th rowspan="2">Fee Breakdown</th>
-									<th colspan="2" align="center">Ilorin</th>
-									<th colspan="2" align="center">Lagos</th>
-									<th colspan="2" align="center">Ibadan</th>
-									<th colspan="2" align="center">Port Harcourt</th>
-									<th colspan="2" align="center">Abuja</th>
+									<th colspan="1" align="center">Ilorin</th>
+									<th colspan="1" align="center">Lagos</th>
+									<th colspan="1" align="center">Ibadan</th>
 								</tr>
 								<tr>
 								  <th>IJMB</th>
-								  <th>JUPEB</th>
 								  <th>IJMB</th>
-								  <th>JUPEB</th>
 								  <th>IJMB</th>
-								  <th>JUPEB</th>
-								  <th>IJMB</th>
-								  <th>JUPEB</th>
-								  <th>IJMB</th>
-								  <th>JUPEB</th>
 							  </tr>
 							</thead>
 							<tbody>
 								
 								<tr>
 									<th scope="row">Application Form</th>
-									<td>#8,000</td>
-									<td>#10,000</td>
-									<td>#8,000</td>
-									<td>#10,000</td>
-									<td>#8,000 </td>
-									<td>#10,000</td>
-									<td>#8,000 </td>
-									<td>#10,000</td>
-									<td>#8,000 </td>
-									<td>#10,000</td>
-									
+									<td>#5,000</td>
+									<td>#5,000</td>
+									<td>#5,000</td>
 								</tr>
 								<tr>
 									<th scope="row">Course Materials</th>
-									<td>#25,000</td>
-									<td>#30,000</td>
-									<td>#25,000</td>
-									<td>#30,000</td>
-									<td>#25,000</td>
-									<td>#30,000</td>
-									<td>#25,000</td>
-									<td>#30,000</td>
-									<td>#25,000</td>
-									<td>#30,000</td>
-									
+									<td>#40,000</td>
+									<td>#40,000</td>
+									<td>#40,000</td>									
 								</tr>
 								<tr>
 									<th scope="row">Hostel Fee</th>
-									<td>#35,000</td>
-									<td>#40,000</td>
-									<td>#50,000</td>
-									<td>#50,000</td>
-									<td>#45,000</td>
-									<td>#45,000</td>
-									<td>#50,000</td>
-									<td>#50,000</td>
-									<td>#50,000</td>
-									<td>#50,000</td>
-									
+									<td>#30,000</td>
+									<td>#75,000</td>
+									<td>#20,000</td>								
 								</tr>
 								<tr>
 									<th scope="row">Acceptance Fee</th>
-									<td>#20,000</td>
-									<td>#20,000</td>
-									<td>#20,000</td>
-									<td>#20,000</td>
-									<td>#20,000</td>
-									<td>#20,000</td>
-									<td>#20,000</td>
-									<td>#20,000</td>
-									<td>#20,000</td>
-									<td>#20,000</td>
+									<td>#15,000</td>
+									<td>#15,000</td>
+									<td>#15,000</td>
 								</tr>
 								<tr>
 									<th scope="row">Tuition Fee</th>
-									<td>#90,000</td>
-									<td>#110,000</td>
-									<td>#90,000</td>
-									<td>#130,000</td>
-									<td>#90,000 </td>
-									<td>#130,000</td>
-									<td>#90,000</td>
-									<td>#110,000</td>
-									<td>#90,000</td>
-									<td>#110,000</td>
+									<td>#155,000</td>
+									<td>#155,000</td>
+									<td>#155,000</td>
+								</tr>
+								<tr>
+									<th scope="row">Admin Charges</th>
+									<td>#20,000</td>
+									<td>#20,000</td>
+									<td>#20,000</td>
 								</tr>
 								<tr>
 									<th scope="row"><strong>Total</strong></th>
-									<td><strong>#178,000</strong></td>
-									<td><strong>#210,000</strong></td>
-									<td><strong>#193,000</strong></td>
-									<td><strong>#240,000</strong></td>
-									<td><strong>#188,000</strong></td>
-									<td><strong>#235,000</strong></td>
-									<td><strong>#193,000</strong></td>
-									<td><strong>#220,000</strong></td>
-									<td><strong>#193,000</strong></td>
-									<td><strong>#220,000</strong></td>
-									
-
+									<td><strong>#265,000</strong></td>
+									<td><strong>#255,000</strong></td>
+									<td><strong>#310,000</strong></td>
 								</tr>
 							</tbody>
 						</table>
