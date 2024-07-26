@@ -3,8 +3,9 @@ require('lib/functions.php');
 if(isset($_POST['email'])){
 	$pay = make_payment_attempt($_POST['email'], $_POST['phone'], $_POST['surname'], $_POST['othernames'], $_POST['regno'], $_POST['fee_code'],'',$_POST['prog_id'],$_POST['sess']);
 	
-	print_r($pay);
+	//print_r($pay);
 	//header("Location: {$pay}");
+	echo "<script>location.href='$pay'</script>";
 	exit;
 }
 if ($_GET['exist'] == 0) {
