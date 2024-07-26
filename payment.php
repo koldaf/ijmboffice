@@ -11,6 +11,9 @@ if(isset($_POST['email'])){
 	
 	header("Location : $pay");
 
+	
+	exit;
+
 }
 $userdet = json_decode(dlookup_json('*', 'application_dummy ad, payment_setup ps, programmetb p', "ad.regno='$regno' AND ps.prog_id=ad.exam_type AND p.prog_id = ad.exam_type"));
 
