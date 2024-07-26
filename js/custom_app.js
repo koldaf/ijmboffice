@@ -321,6 +321,6 @@ $('.ajaxform').submit(function(){
 	}
 	//document.getElementsByClassName("ajaxform").reset();
 
-	return false; 
+	return false;
 });
 console.log('..bot waiting for action');
