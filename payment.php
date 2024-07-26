@@ -1,18 +1,18 @@
 <?php
 require('lib/functions.php');
+if(isset($_POST['email'])){
+	$pay = make_payment_attempt($_POST['email'], $_POST['phone'], $_POST['surname'], $_POST['othernames'], $_POST['regno'], $_POST['fee_code'],'',$_POST['prog_id'],$_POST['sess']);
+	
+	print_r($pay);
+	//header("Location : $pay");
+
+	exit;
+
+}
 if ($_GET['exist'] == 0) {
 	$regno = base64_decode($_GET['reg']);
 } else if ($_GET['exist'] == 1) {
 	$regno = base64_decode($_GET['reg']);
-}
-if(isset($_POST['email'])){
-	$pay = make_payment_attempt($_POST['email'], $_POST['phone'], $_POST['surname'], $_POST['othernames'], $_POST['regno'], $_POST['fee_code'],'',$_POST['prog_id'],$_POST['sess']);
-	
-	header("Location : $pay");
-
-
-	exit;
-
 }
 $userdet = json_decode(dlookup_json('*', 'application_dummy ad, payment_setup ps, programmetb p', "ad.regno='$regno' AND ps.prog_id=ad.exam_type AND p.prog_id = ad.exam_type"));
 
