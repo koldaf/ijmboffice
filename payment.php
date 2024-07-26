@@ -1,6 +1,5 @@
 <?php
 require('lib/functions.php');
-require('header.php');
 if ($_GET['exist'] == 0) {
 	$regno = base64_decode($_GET['reg']);
 } else if ($_GET['exist'] == 1) {
@@ -11,13 +10,14 @@ if(isset($_POST['email'])){
 	
 	header("Location : $pay");
 
-	
+
 	exit;
 
 }
 $userdet = json_decode(dlookup_json('*', 'application_dummy ad, payment_setup ps, programmetb p', "ad.regno='$regno' AND ps.prog_id=ad.exam_type AND p.prog_id = ad.exam_type"));
 
 //print_r($userdet[0]);
+require('header.php');
 ?>
 <div class="row" style="margin-top: 10px;">
 	<ol class="breadcrumb">
