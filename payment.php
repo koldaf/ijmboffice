@@ -6,6 +6,12 @@ if ($_GET['exist'] == 0) {
 } else if ($_GET['exist'] == 1) {
 	$regno = base64_decode($_GET['reg']);
 }
+if(isset($_POST['email'])){
+	$pay = make_payment_attempt($_POST['email'], $_POST['phone'], $_POST['surname'], $_POST['othernames'], $_POST['regno'], $_POST['fee_code'],'',$_POST['prog_id'],$_POST['sess']);
+	
+	header("Location : $pay");
+
+}
 $userdet = json_decode(dlookup_json('*', 'application_dummy ad, payment_setup ps, programmetb p', "ad.regno='$regno' AND ps.prog_id=ad.exam_type AND p.prog_id = ad.exam_type"));
 
 //print_r($userdet[0]);
@@ -40,7 +46,7 @@ $userdet = json_decode(dlookup_json('*', 'application_dummy ad, payment_setup ps
 			Please ensure your details are well captured as shown below:</br>
 			<div class="row">
 				<div class="col-sm-6 col-sm-offset-3">
-					<form class="ajaxform" action="script.php?cmd=form-payment" method="post">
+					<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 						<div class="form-group">
 							<label for="email">Email:</label>
 							<input name="email" class="form-control" value="<?php echo $userdet[0]->email ?>" readonly />
