@@ -31,6 +31,12 @@
     <link rel="stylesheet" href="css/responsiveslides.css">
     <link rel="stylesheet" href="css/custom.css" type="text/css">
     <link rel="icon" href="img/IJMBlogo.png" media="all">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+	<script src="js/bootstrap-notify.min.js"></script>
+	<script src="js/custom_app.js"></script>
   </head>
   <body>
   <script>

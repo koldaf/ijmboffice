@@ -226,13 +226,6 @@
 			</div>	
 
 		</footer>
-
-	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/responsiveslides.min.js"></script>
-    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-	<script src="js/bootstrap-notify.min.js"></script>
-	<script src="js/custom_app.js"></script>
 	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
   <script>
