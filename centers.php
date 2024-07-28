@@ -76,8 +76,8 @@
 								<tr>
 									<th scope="row"><strong>Total</strong></th>
 									<td><strong>#265,000</strong></td>
-									<td><strong>#255,000</strong></td>
 									<td><strong>#310,000</strong></td>
+									<td><strong>#255,000</strong></td>
 								</tr>
 							</tbody>
 						</table>
