@@ -57,8 +57,8 @@ if(!$tranx->status){
 }
 
 // comment out this line if you want to redirect the user to the payment page
-//print_r($tranx);
-//exit;
+print_r($tranx);
+exit;
 $con->query("UPDATE payment_attempttb SET ret_ref = '".$tranx['data']['reference']."' WHERE trans_id = '".$j->trans_id."'") or die("Fatal Error, Try Again");
 
 
